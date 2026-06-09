@@ -25,14 +25,74 @@ def actualizaProducto():
 
     print(f"Producto actualizado a: {productosDicc[opc]}")
 
-# def actualizarFruta():
-#     muestraFruta()
-#     opc = int(input("Seleccione el numero de la fruta a actualizar: "))
-#     nuevaF = input("Ingrese la nueva fruta: ")
+def comprarProd():
+    mostrarProd()
+    carrito = []
+    cant = int(input("Cuántos productos desea comprar?: "))
+    for compra in range(cant):
+        comp = int(input("Ingrese el producto que quiera comprar: "))
+        carrito.append(productosDicc[comp])
+        print(f"Su carrito actual es: {carrito}")
+    print(f"\nSu carrito final es: {carrito}")
 
-#     frutas[opc-1] = nuevaF
+def crearBoleta():
+    
+    for p in carrito:
+    print("El total de su boleta es: ")
 
-actualizaProducto()
+
+def feria():
+    while True:
+        print("---FERIA---")
+        print("1.- Agregar Producto")
+        print("2.- Eliminar Producto")
+        print("3.- Actualizar Producto")
+        print("4.- Mostrar Producto")
+        print("5.- Comprar Productos")
+        print("6.- Crear Boleta (calcula IVA) y Salir")
+
+        op = int(input("Seleccione una opcion: "))
+        match op:
+            case 1:
+                mostrarProd()
+            case 2:
+                print("")
+            case 3:
+                actualizaProducto()
+            case 4:
+                mostrarProd()
+            case 5:
+                comprarProd()
+            case 6:
+                crearBoleta()
+                print("Saliendo...")
+                break
+            case _:
+                print("Opcion invalida")
+
+feria() 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #Desafio
 
